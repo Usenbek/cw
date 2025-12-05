@@ -25,14 +25,14 @@ def func(page: cw.Page):
             greeting_history.append(name)
             print("history>>>>",greeting_history)
             history_text.value = "История приветствий: \n" + "\n".join(greeting_history)
-            if len(greeting_history) > 4:
+            if len(greeting_history) > 4: #больше 5 имен не будет
               greeting_history.pop(0)
         else:
             greeting_text.value = 'Введите корректное имя'
             greeting_text.color = cw.Colors.RED
         page.update()
 
-      def add_favorite_name(_):
+      def add_favorite_name(_): #избранные имена 
           fname = name_input.value.strip()
           if fname:
             favorite_names.append(fname)
